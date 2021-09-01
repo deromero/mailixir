@@ -1,6 +1,5 @@
 using System.Threading.Tasks;
-using Mailixir.Web.Api.Models;
-using Mailixir.Web.Api.Models.Responses;
+using Mailixir.Application.Models.Responses;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;

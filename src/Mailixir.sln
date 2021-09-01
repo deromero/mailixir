@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mailixir.Web.Api", "Mailixi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mailixir.Domain", "Mailixir.Domain\Mailixir.Domain.csproj", "{8A642567-8909-45D7-9F0E-CE522697505E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mailixir.Core", "Mailixir.Core\Mailixir.Core.csproj", "{A04304E0-383F-4A51-A655-6D0993A68FD2}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mailixir.Application", "Mailixir.Application\Mailixir.Application.csproj", "{93F9F74D-B040-44B9-B648-C96BFE4C2107}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mailixir.Data", "Mailixir.Data\Mailixir.Data.csproj", "{EAC15464-2B6E-4E5D-9872-BB1ECA472E79}"

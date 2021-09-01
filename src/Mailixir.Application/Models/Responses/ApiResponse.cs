@@ -1,6 +1,6 @@
 using System;
 
-namespace Mailixir.Web.Api.Models.Responses
+namespace Mailixir.Application.Models.Responses
 {
     [Serializable]
     public class ApiResponse

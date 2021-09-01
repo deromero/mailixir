@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Mailixir.Web.Api.Models.Responses
+namespace Mailixir.Application.Models.Responses
 {
     [Serializable]
     public class ValidationResponse : ApiResponse
