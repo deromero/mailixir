@@ -19,14 +19,13 @@ namespace Mailixir.Web.Api.Controllers
             _logger = logger;
         }
 
-        [HttpGet]
-        [Route("ping")]
+[HttpGet]
+[Route("ping")]
         public async Task<IActionResult> Ping()
         {
             _logger.LogInformation("Starts UTILS/PING");
 
-            var response = new ApiResponse
-            {
+            var response = new ApiResponse {
                 Message = "MAILIXIR SERVICE WORKING OK",
                 Code = "000"
             };
