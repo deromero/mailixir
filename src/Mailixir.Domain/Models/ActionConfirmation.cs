@@ -1,6 +1,6 @@
 using System;
 
-namespace Mailixir.Application.Models
+namespace Mailixir.Domain.Models
 {
     [Serializable]
     public class ActionConfirmation
