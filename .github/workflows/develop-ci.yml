@@ -25,18 +25,10 @@ jobs:
     - name: Build Mailixir with .NET
       run: dotnet build --no-restore --configuration Releaase Mailixir.sln
 
-test:
-  runs-on: ubuntu-latest
+  test:
+    runs-on: ubuntu-latest
 
-  steps:
-  - uses: actions/checkout@v2
-  - name: run mailixir tests
-    run: dotnet test Mailixir.sln --configuration Release --verbosity normal --logger trx --results-directory "Mailixir.TestsResults-${{ matrix.dotnet-version }}"
-    
-  - name: Upload Mailixir .NET Test results
-  - uses: actions/upload-artifact@v2
-      with:
-        name: Mailixir.TestsResults-${{ matrix.dotnet-version }}
-        path: Mailixir.TestResults-${{ matrix.dotnet-version }}
-      
-      if: ${{ always() }}    
+    steps:
+    - uses: actions/checkout@v2
+    - name: run mailixir tests
+      run: dotnet test Mailixir.sln --configuration Release --verbosity normal --logger trx --results-directory "Mailixir.TestsResults-${{ matrix.dotnet-version }}"
