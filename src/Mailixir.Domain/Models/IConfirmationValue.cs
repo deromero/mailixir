@@ -1,4 +1,4 @@
-namespace Mailixir.Application.Models
+namespace Mailixir.Domain.Models
 {
     public interface IConfirmationValue
     {
