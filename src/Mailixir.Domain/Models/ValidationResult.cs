@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Mailixir.Application.Models
+namespace Mailixir.Domain.Models
 {
 
     [Serializable]
