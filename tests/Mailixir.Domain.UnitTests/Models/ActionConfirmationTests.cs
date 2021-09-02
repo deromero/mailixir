@@ -8,7 +8,7 @@ namespace Mailixir.Domain.UnitTests.Models
     public class ActionConfirmationTests
     {
         [Fact]
-        public void GetSuccessActionConfirmationWithRightCode()
+        public void GetSuccessActionConfirmationWithDefaultCode()
         {
             var confirmationMessage = "Object OK";
             var confirmation = ActionConfirmation.CreateSuccess(confirmationMessage);
