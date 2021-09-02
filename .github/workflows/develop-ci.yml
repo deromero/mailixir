@@ -1,0 +1,35 @@
+name: Develop Branch .NET C.I.
+
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        dotnet-version: [ '5.0.x' ]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: ${{ matrix.dotnet-version }}
+    - name: Install dependencies
+      run: dotnet restore
+    - name: Build Solution
+      run: dotnet build --no-restore
+    - name: Test Mailixir with .NET & Log results
+      run: dotnet test --no-build --verbosity normal --logger trx --results-directory "Mailixir.TestsResults-${{ matrix.dotnet-version }}"
+    - name: Upload Mailixir .NET Test results
+      uses: actions/upload-artifact@v2
+      with:
+        name: mailixir-dotnet-results-${{ matrix.dotnet-version }}
+        path: Mailixir.TestResults-${{ matrix.dotnet-version }}
+      
+      if: ${{ always() }}
