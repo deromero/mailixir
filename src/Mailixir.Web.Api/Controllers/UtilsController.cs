@@ -21,7 +21,7 @@ namespace Mailixir.Web.Api.Controllers
 
         [HttpGet]
         [Route("ping")]
-        public async Task<IActionResult> Ping()
+        public async Task<ActionResult<ApiResponse>> Ping()
         {
             _logger.LogInformation("Starts UTILS/PING");
 
@@ -35,8 +35,7 @@ namespace Mailixir.Web.Api.Controllers
                 Code = "000"
             };
 
-            return Ok(response);
-
+            return response;
         }
 
     }
