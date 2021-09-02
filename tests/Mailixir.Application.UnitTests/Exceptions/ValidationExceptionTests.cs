@@ -31,6 +31,7 @@ namespace Mailixir.Application.UnitTests.Exceptions
             actual["Age"].Should().BeEquivalentTo(new string[] { "must be over 18" });
         }
 
+        [Fact]
         public void MulitpleValidationFailureForMultiplePropertiesCreatesAMultipleElementErrorDictionaryEachWithMultipleValues()
         {
             var failures = new List<ValidationFailure>
