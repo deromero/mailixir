@@ -1,5 +1,5 @@
 using System;
-namespace Mailixir.Application.Common.Exceptions
+namespace Mailixir.Application.Exceptions
 {
     public class NotFoundException : Exception
     {

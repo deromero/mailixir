@@ -2,7 +2,7 @@ using Xunit;
 using FluentAssertions;
 using FluentValidation.Results;
 using System;
-using Mailixir.Application.Common.Exceptions;
+using Mailixir.Application.Exceptions;
 using System.Collections.Generic;
 
 namespace Mailixir.Application.UnitTests.Exceptions
