@@ -1,5 +1,5 @@
 using System.Threading.Tasks;
-using Mailixir.Application.Models.Responses;
+using Mailixir.Application.Wrappers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
@@ -7,8 +7,8 @@ using Microsoft.Extensions.Logging;
 namespace Mailixir.Web.Api.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
-    public class UtilsController : ControllerBase
+    [Route("[controller]")]
+    public class UtilsController : BaseApiController
     {
         private readonly IConfiguration _configuration;
         private readonly ILogger<UtilsController> _logger;
@@ -21,7 +21,7 @@ namespace Mailixir.Web.Api.Controllers
 
         [HttpGet]
         [Route("ping")]
-        public async Task<ActionResult<ApiResponse>> Ping()
+        public async Task<ActionResult<Response<string>>> Ping()
         {
             _logger.LogInformation("Starts UTILS/PING");
 
@@ -30,10 +30,7 @@ namespace Mailixir.Web.Api.Controllers
             // ECHO or Ping to another systems.
             // Check Permissions
              
-            var response = new ApiResponse {
-                Message = "MAILIXIR SERVICE WORKING OK",
-                Code = "000"
-            };
+            var response = new Response<string>("MAILIXIR SERVICE WORKING OK", "PING RESULT");
 
             return response;
         }

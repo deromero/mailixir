@@ -2,7 +2,7 @@ using Xunit;
 using FluentAssertions;
 using FluentValidation.Results;
 using System;
-using Mailixir.Application.Common.Exceptions;
+using Mailixir.Application.Exceptions;
 using System.Collections.Generic;
 
 namespace Mailixir.Application.UnitTests.Exceptions
@@ -31,6 +31,7 @@ namespace Mailixir.Application.UnitTests.Exceptions
             actual["Age"].Should().BeEquivalentTo(new string[] { "must be over 18" });
         }
 
+        [Fact]
         public void MulitpleValidationFailureForMultiplePropertiesCreatesAMultipleElementErrorDictionaryEachWithMultipleValues()
         {
             var failures = new List<ValidationFailure>

@@ -3,10 +3,9 @@ using Moq;
 using FluentAssertions;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
-using Mailixir.Web.Api.Controllers;
 using Microsoft.Extensions.Configuration;
-using Microsoft.AspNetCore.Mvc;
-using Mailixir.Application.Models.Responses;
+using Mailixir.Application.Wrappers;
+using Mailixir.Web.Api.Controllers;
 
 namespace Mailixir.Application.IntegrationTests.Controllers
 {
@@ -16,12 +15,8 @@ namespace Mailixir.Application.IntegrationTests.Controllers
         [Fact]
         public async Task GetPingAsync_ReturnsApiResponse()
         {
-            var expectedResult = new ApiResponse
-            {
-                Message = "MAILIXIR SERVICE WORKING OK",
-                Code = "000"
-            };
-
+            var expectedResult = new Response<string>("MAILIXIR SERVICE WORKING OK", "PING RESULT");
+            
             var configStub = new Mock<IConfiguration>();
             var loggerStub = new Mock<ILogger<UtilsController>>();
 
